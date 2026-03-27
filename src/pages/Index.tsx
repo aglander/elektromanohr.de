@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Clock, CheckCircle2, Zap, Wrench, Home, Cpu } from "lucide-react";
+import Footer from "@/components/Footer";
 
 import logo from "@/assets/logo.png";
 

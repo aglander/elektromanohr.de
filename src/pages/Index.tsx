@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock, CheckCircle2, Zap, Wrench, Home, Cpu } from "lucide-react";
-import { useState } from "react";
+
 import logo from "@/assets/logo.png";
 
 const HeroSection = () => (

@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock, CheckCircle2, Zap, Wrench, Home, Cpu } from "lucide-react";
-import { useState } from "react";
+
 import logo from "@/assets/logo.png";
 
 const HeroSection = () => (
@@ -22,7 +22,7 @@ const HeroSection = () => (
       </p>
       <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <a
-          href="tel:033626263"
+          href="tel:+4933626263"
           className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
         >
           <Phone className="h-5 w-5" />
@@ -138,141 +138,55 @@ const WhyUsSection = () => (
   </section>
 );
 
-const ContactSection = () => {
-  const [formState, setFormState] = useState({ name: "", phone: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+const ContactSection = () => (
+  <section className="section-padding bg-background" id="kontakt">
+    <div className="container-narrow">
+      <h2 className="mb-4 text-center text-2xl font-semibold md:text-3xl">
+        Jetzt Kontakt aufnehmen
+      </h2>
+      <p className="mx-auto mb-14 max-w-2xl text-center text-lg text-muted-foreground">
+        Sie brauchen einen Elektriker, auf den Sie sich verlassen können? Dann
+        melden Sie sich bei uns – wir kümmern uns darum.
+      </p>
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // In production: send to backend
-    setSubmitted(true);
-  };
-
-  return (
-    <section className="section-padding bg-background" id="kontakt">
-      <div className="container-wide">
-        <h2 className="mb-4 text-center text-2xl font-semibold md:text-3xl">
-          Jetzt Kontakt aufnehmen
-        </h2>
-        <p className="mx-auto mb-14 max-w-2xl text-center text-lg text-muted-foreground">
-          Sie brauchen einen Elektriker, auf den Sie sich verlassen können? Dann
-          melden Sie sich bei uns – wir kümmern uns darum.
-        </p>
-
-        <div className="grid gap-12 lg:grid-cols-2">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="flex items-start gap-4">
-              <MapPin className="mt-1 h-6 w-6 flex-shrink-0 text-primary" />
-              <div>
-                <p className="font-semibold">Adresse</p>
-                <p className="text-muted-foreground">
-                  Gottesbrück 8, 15537 Grünheide (Mark)
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <Phone className="mt-1 h-6 w-6 flex-shrink-0 text-primary" />
-              <div>
-                <p className="font-semibold">Telefon</p>
-                <a
-                  href="tel:033626263"
-                  className="text-primary underline-offset-2 hover:underline"
-                >
-                  033626 263
-                </a>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <Mail className="mt-1 h-6 w-6 flex-shrink-0 text-primary" />
-              <div>
-                <p className="font-semibold">E-Mail</p>
-                <a
-                  href="mailto:info@elektromanohr.de"
-                  className="text-primary underline-offset-2 hover:underline"
-                >
-                  info@elektromanohr.de
-                </a>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <Clock className="mt-1 h-6 w-6 flex-shrink-0 text-primary" />
-              <div>
-                <p className="font-semibold">Öffnungszeiten</p>
-                <p className="text-muted-foreground">Mo–Do: 7:30 – 16:00 Uhr</p>
-                <p className="text-muted-foreground">Fr: 7:30 – 13:00 Uhr</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div>
-            {submitted ? (
-              <div className="flex flex-col items-center justify-center rounded-xl border border-primary/20 bg-accent p-12 text-center">
-                <CheckCircle2 className="mb-4 h-12 w-12 text-primary" />
-                <p className="text-xl font-semibold">Vielen Dank!</p>
-                <p className="mt-2 text-muted-foreground">
-                  Wir melden uns schnellstmöglich bei Ihnen.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label htmlFor="name" className="mb-1.5 block text-sm font-semibold">
-                    Name
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    required
-                    value={formState.name}
-                    onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                    className="w-full rounded-lg border border-input bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                    placeholder="Ihr Name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="mb-1.5 block text-sm font-semibold">
-                    Telefonnummer
-                  </label>
-                  <input
-                    id="phone"
-                    type="tel"
-                    required
-                    value={formState.phone}
-                    onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                    className="w-full rounded-lg border border-input bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                    placeholder="Ihre Telefonnummer"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="mb-1.5 block text-sm font-semibold">
-                    Nachricht
-                  </label>
-                  <textarea
-                    id="message"
-                    required
-                    rows={4}
-                    value={formState.message}
-                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                    className="w-full resize-none rounded-lg border border-input bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                    placeholder="Wie können wir Ihnen helfen?"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-                >
-                  Anfrage senden
-                </button>
-              </form>
-            )}
-          </div>
+      <div className="mx-auto max-w-md space-y-8 text-center">
+        <div className="flex flex-col items-center gap-2">
+          <MapPin className="h-6 w-6 text-primary" />
+          <p className="font-semibold">Adresse</p>
+          <p className="text-muted-foreground">
+            Gottesbrück 8, 15537 Grünheide (Mark)
+          </p>
+        </div>
+        <div className="flex flex-col items-center gap-2">
+          <Phone className="h-6 w-6 text-primary" />
+          <p className="font-semibold">Telefon</p>
+          <a
+            href="tel:+4933626263"
+            className="text-primary underline-offset-2 hover:underline"
+          >
+            +49 3362 6263
+          </a>
+        </div>
+        <div className="flex flex-col items-center gap-2">
+          <Mail className="h-6 w-6 text-primary" />
+          <p className="font-semibold">E-Mail</p>
+          <a
+            href="mailto:info@elektromanohr.de"
+            className="text-primary underline-offset-2 hover:underline"
+          >
+            info@elektromanohr.de
+          </a>
+        </div>
+        <div className="flex flex-col items-center gap-2">
+          <Clock className="h-6 w-6 text-primary" />
+          <p className="font-semibold">Öffnungszeiten</p>
+          <p className="text-muted-foreground">Mo–Do: 7:30 – 16:00 Uhr</p>
+          <p className="text-muted-foreground">Fr: 7:30 – 13:00 Uhr</p>
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 const Footer = () => (
   <footer className="border-t border-border bg-card px-5 py-8 text-center text-sm text-muted-foreground">

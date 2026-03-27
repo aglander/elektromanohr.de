@@ -188,15 +188,6 @@ const ContactSection = () => (
   </section>
 );
 
-const Footer = () => (
-  <footer className="border-t border-border bg-card px-5 py-8 text-center text-sm text-muted-foreground">
-    <p>
-      © {new Date().getFullYear()} Elektroinstallation Ing. Olaf Manohr –
-      Grünheide (Mark)
-    </p>
-  </footer>
-);
-
 const Index = () => (
   <main>
     <HeroSection />

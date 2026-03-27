@@ -22,7 +22,7 @@ const HeroSection = () => (
       </p>
       <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <a
-          href="tel:033626263"
+          href="tel:+4933626263"
           className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
         >
           <Phone className="h-5 w-5" />

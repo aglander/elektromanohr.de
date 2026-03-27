@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Clock, CheckCircle2, Zap, Wrench, Home, Cpu } from "lucide-react";
+import Footer from "@/components/Footer";
 
 import logo from "@/assets/logo.png";
 
@@ -186,15 +187,6 @@ const ContactSection = () => (
       </div>
     </div>
   </section>
-);
-
-const Footer = () => (
-  <footer className="border-t border-border bg-card px-5 py-8 text-center text-sm text-muted-foreground">
-    <p>
-      © {new Date().getFullYear()} Elektroinstallation Ing. Olaf Manohr –
-      Grünheide (Mark)
-    </p>
-  </footer>
 );
 
 const Index = () => (

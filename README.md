@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# elektromanohr.de
 
-TODO: Document your project here
+Vite/React-Website fuer Elektroinstallation Ing. Olaf Manohr in Gruenheide.

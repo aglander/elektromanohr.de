@@ -1,0 +1,59 @@
+---
+import "@/index.css";
+import { defaultStructuredData, type SeoConfig, toAbsoluteUrl } from "@/lib/seo";
+
+interface Props {
+  seo: SeoConfig;
+  includeStructuredData?: boolean;
+}
+
+const { seo, includeStructuredData = true } = Astro.props;
+const canonicalUrl = toAbsoluteUrl(seo.path);
+const robots = seo.robots ?? "index, follow";
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>{seo.title}</title>
+    <meta content={seo.description} name="description" />
+    <meta content="Elektroinstallation Ing. Olaf Manohr" name="author" />
+    <meta content={robots} name="robots" />
+    <link href={canonicalUrl} rel="canonical" />
+    <link href="/favicon.svg?v=2" rel="icon" type="image/svg+xml" />
+    <link href="/favicon-32.png?v=2" rel="icon" sizes="32x32" type="image/png" />
+    <link href="/favicon.ico?v=2" rel="alternate icon" />
+
+    <meta content={seo.title} property="og:title" />
+    <meta content={seo.description} property="og:description" />
+    <meta content={seo.ogType ?? "website"} property="og:type" />
+    <meta content={canonicalUrl} property="og:url" />
+    <meta content="Elektroinstallation Ing. Olaf Manohr" property="og:site_name" />
+    <meta content="de_DE" property="og:locale" />
+    <meta content="summary" name="twitter:card" />
+    <meta content={seo.title} name="twitter:title" />
+    <meta content={seo.description} name="twitter:description" />
+
+    {includeStructuredData && (
+      <script
+        is:inline
+        set:html={JSON.stringify(defaultStructuredData)}
+        type="application/ld+json"
+      />
+    )}
+  </head>
+
+  <body>
+    <noscript>
+      <img
+        alt=""
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
+      />
+    </noscript>
+    <slot />
+    <script async data-collect-dnt="true" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  </body>
+</html>

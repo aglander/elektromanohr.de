@@ -1,0 +1,33 @@
+---
+import Footer from "@/components/Footer.astro";
+import Icon from "@/components/Icon.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { seoConfigs } from "@/lib/seo";
+---
+
+<BaseLayout includeStructuredData={false} seo={seoConfigs.danke}>
+  <main class="section-padding bg-background">
+    <div class="container-narrow">
+      <a class="mb-8 inline-flex items-center gap-2 text-primary hover:underline" href="/">
+        <Icon class="h-4 w-4" name="arrow-left" />
+        Zurück zur Startseite
+      </a>
+
+      <div class="rounded-2xl border border-border bg-card p-8 text-center shadow-sm md:p-12">
+        <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-accent">
+          <Icon class="h-10 w-10 text-primary" name="badge-check" />
+        </div>
+
+        <h1 class="mb-4 text-3xl font-semibold md:text-4xl">
+          Vielen Dank für Ihre Nachricht
+        </h1>
+
+        <p class="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          Ihre Anfrage ist bei uns eingegangen. Wir melden uns so schnell wie
+          möglich bei Ihnen zurück und kümmern uns gern um Ihr Anliegen.
+        </p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

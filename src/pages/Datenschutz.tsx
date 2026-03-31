@@ -76,6 +76,48 @@ const Datenschutz = () => (
             geht.
           </p>
 
+          <h3>Verwendung unseres Online-Formulars</h3>
+          <p>
+            Unsere Internetseite nutzt Form.taxi, einen Webdienst der Webseite{" "}
+            <a
+              href="https://form.taxi"
+              target="_blank"
+              rel="noreferrer"
+              className="text-primary hover:underline"
+            >
+              form.taxi
+            </a>{" "}
+            (nachfolgend &quot;Form.taxi&quot;). Um Ihnen die Funktionalität
+            des Formulars zur Verfügung zu stellen, senden wir die von Ihnen
+            angegebenen Daten an Form.taxi.
+          </p>
+          <p>
+            Diese Daten werden dort verarbeitet, gespeichert und an uns per
+            E-Mail weitergegeben. Außerdem erhebt Form.taxi unter anderem
+            weitere Daten wie Ihre IP-Adresse, Ihren Browsertyp, die Domain
+            unserer Webseite sowie Datum und Uhrzeit des Zugriffs, um die
+            gewünschte Funktionalität des Formulars bereitzustellen.
+          </p>
+          <p>
+            Rechtsgrundlage für die Nutzung von Form.taxi ist Art. 6 Abs. 1
+            S. 1 lit. f DSGVO (berechtigtes Interesse an einer zuverlässigen
+            und nutzerfreundlichen Bereitstellung unseres Kontaktformulars).
+            Die Datenverarbeitung und Speicherung erfolgt innerhalb der
+            Europäischen Union.
+          </p>
+          <p>
+            Weitere Informationen entnehmen Sie der Datenschutzerklärung von
+            Form.taxi:{" "}
+            <a
+              href="https://form.taxi/de/privacy"
+              target="_blank"
+              rel="noreferrer"
+              className="text-primary hover:underline"
+            >
+              https://form.taxi/de/privacy
+            </a>
+          </p>
+
           <h2>5. Externe Schriftarten</h2>
           <p>
             Diese Website verwendet lokal eingebundene Schriftarten. Es findet

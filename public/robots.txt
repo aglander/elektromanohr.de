@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.elektromanohr.de/sitemap.xml
+Sitemap: https://elektromanohr.de/sitemap.xml

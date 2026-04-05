@@ -1,4 +1,4 @@
-export const SITE_URL = "https://www.elektromanohr.de";
+export const SITE_URL = "https://elektromanohr.de";
 export const SITE_NAME = "Elektroinstallation Ing. Olaf Manohr";
 
 export type SeoConfig = {
